@@ -1,14 +1,14 @@
 import React, { Component, PropTypes } from 'react';
 import { processColor, requireNativeComponent, StyleSheet, View } from 'react-native';
 
-export default class LinearGradient extends Component {
-  static propTypes = {
+module.exports = LinearGradient = React.createClass({
+  propTypes:{
     start: PropTypes.arrayOf(PropTypes.number),
     end: PropTypes.arrayOf(PropTypes.number),
     colors: PropTypes.arrayOf(PropTypes.string).isRequired,
     locations: PropTypes.arrayOf(PropTypes.number),
     ...View.propTypes,
-  };
+  },
 
   render() {
     const {
@@ -57,6 +57,6 @@ export default class LinearGradient extends Component {
       </View>
     );
   }
-}
+})
 
 const NativeLinearGradient = requireNativeComponent('BVLinearGradient', null);
